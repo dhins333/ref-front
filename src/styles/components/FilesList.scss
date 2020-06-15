@@ -1,0 +1,19 @@
+.filesList{
+    max-width: 1100px;
+    margin:auto;
+}
+
+.files{
+    padding:1rem;
+    background-image: -webkit-gradient(linear, left bottom, right bottom, color-stop(0.33,#ad5389 ), color-stop(0.67, #3c1053));
+    border-bottom: #3c1053 solid 1px;
+    transition: opacity ease-in-out 0.2s;
+}
+
+.files:hover{
+    opacity: 0.7;
+}
+
+.files:nth-child(1){
+    margin-top: $margin-xl;
+}

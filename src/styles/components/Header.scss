@@ -1,0 +1,18 @@
+.Header{
+    background: linear-gradient(to right, #ad5389, #3c1053);
+}
+
+.Header__container{
+    max-width: 1100px;
+    margin:auto;
+    padding:0.5rem;
+}
+
+.Header__h2{
+    font-size: $font-large;
+    font-family: 'Pacifico', cursive;
+    background: -webkit-linear-gradient(#a8ff78,#78ffd6 );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-decoration:none;
+}

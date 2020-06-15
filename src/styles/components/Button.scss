@@ -1,0 +1,15 @@
+.button{
+    margin:auto;
+    text-align: center;
+    margin-top: $margin-xl;
+}
+
+.loadButton{
+    padding:1rem;
+    color:white;
+    background-image: -webkit-gradient(linear, left bottom, left top, color-stop(0.33,#bc4e9c ), color-stop(0.67, #f80759));
+    border:none;
+    cursor: pointer;
+    font-size: 1.25rem;
+    border-radius: 3px;
+}
