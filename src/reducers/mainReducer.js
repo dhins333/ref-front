@@ -9,7 +9,7 @@ const mainReducer = (state,action) => {
                 skips:action.skips
             }
         default:
-            return undefined;
+            return state;
     }
 }
 

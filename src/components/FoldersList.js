@@ -1,36 +1,37 @@
-import React,{useEffect, useReducer, Fragment} from 'react';
+import React,{useEffect} from 'react';
 import {withRouter} from 'react-router-dom';
 import SkeletonCard from './SkeletonCard'
-import mainReducer from '../reducers/mainReducer';
-import MainContext from '../context/mainContext';
 import Card from './Card';
 import axios from 'axios';
 import Button from './Button';
+import { useSelector, useDispatch } from 'react-redux';
 const FoldersList = (props) => {
 
     const loaderRef = React.createRef();
-    const [state,dispatch] = useReducer(mainReducer,{
-        folderArray:[],
-        max:0,
-        skips:0
-    })
+    const state = useSelector((state) => {
+        return state;
+    });
+    const dispatch = useDispatch();
+    
     
        
 
     useEffect(() => {
         const effectFunction = async () => {
             try{
-                const countResponse = await axios.get('/api/folders/count');
-                const count = countResponse.data.count;
-                const max = Math.ceil(count/8);
-                const foldersResponse = await axios.get('/api/folders?skipVal=0');
-                const folders = foldersResponse.data;
-                dispatch({
-                    type:'ADD_FOLDERS_TO_ARRAY',
-                    folderArray:folders,
-                    max,
-                    skips:state.skips + 1
-                })
+                if(state.folderArray.length === 0){
+                    const countResponse = await axios.get('/api/folders/count');
+                    const count = countResponse.data.count;
+                    const max = Math.ceil(count/8);
+                    const foldersResponse = await axios.get('/api/folders?skipVal=0');
+                    const folders = foldersResponse.data;
+                    dispatch({
+                        type:'ADD_FOLDERS_TO_ARRAY',
+                        folderArray:folders,
+                        max,
+                        skips:state.skips + 1
+                    })
+                }
             }catch(e){
                 console.log(e);
             }
@@ -89,13 +90,13 @@ const FoldersList = (props) => {
     }
 
     return(
-        <MainContext.Provider value={{state,dispatch}}>
+        <>
             <div className="folders">
                 {state.folderArray.length === 0 ? skeletonGen() : cardGen() }    
             </div>
             {renderButton()}
             <div ref={loaderRef} className='loaderContainer'></div>
-        </MainContext.Provider>
+        </>
     )
 }
 
