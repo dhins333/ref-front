@@ -7,3 +7,9 @@
     grid-gap:1rem;
 }
 
+@media (max-width:600px){
+    .folders{
+        display: block;
+    }
+}
+

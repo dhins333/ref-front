@@ -26,3 +26,16 @@
     font-size: $font-medium;
     background-color:black;
 }
+
+@media (max-width:600px){
+    .card{
+        transition:none;
+        width: 50%;
+        margin:auto;
+        margin-top: $margin-l;
+    }
+
+    .card:hover{
+        transform:none;
+    }
+}
