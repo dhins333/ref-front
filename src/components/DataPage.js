@@ -20,10 +20,14 @@ const DataPage = (props) => {
     
     useEffect(() => {
         const effectFunc = async () => {
-            const dataResp = await axios.get(`/api/files/${props.match.params.id}/data`);
-            const data = dataResp.data.data;
-            setValue(data);
-            setLang(dataResp.data.lang);
+            try{
+                const dataResp = await axios.get(`/api/files/${props.match.params.id}/data`);
+                const data = dataResp.data.data;
+                setValue(data);
+                setLang(dataResp.data.lang);
+            }catch(e){
+                document.querySelector('.dataPage').innerHTML = '<h1 style="color:#ffffff">404 Not Found'
+            }
         }
         effectFunc();
     },[props.match.params.id])
