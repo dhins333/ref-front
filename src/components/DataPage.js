@@ -23,16 +23,15 @@ const DataPage = (props) => {
             const dataResp = await axios.get(`/api/files/${props.match.params.id}/data`);
             const data = dataResp.data.data;
             setValue(data);
-            console.log(dataResp.data.lang);
             setLang(dataResp.data.lang);
         }
         effectFunc();
-    },[])
+    },[props.match.params.id])
 
 
 
     return(
-        <div>
+        <div className = 'dataPage'>
             <CodeMirror
             value={value}
             options={options}

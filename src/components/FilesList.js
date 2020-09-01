@@ -12,7 +12,7 @@ const FilesList = (props) => {
             setFiles(files);
         }
         effectFunc();
-    },[])
+    },[props.id])
 
     const renderFiles = () => {
         return files.map((file,index) => {

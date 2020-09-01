@@ -17,3 +17,9 @@
 .files:nth-child(1){
     margin-top: $margin-xl;
 }
+
+@media (max-width:600px){
+    .filesList{
+        padding:1rem;
+    }
+}

@@ -17,3 +17,27 @@ body{
     min-height: 80vh;
     border-radius: 5px;
 }
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+  }
+  
+::-webkit-scrollbar-track {
+    background-color:#3d1053;
+  }
+  
+  
+::-webkit-scrollbar-thumb {
+    background-color:#9bf4bc
+  }
+  
+::-webkit-scrollbar-thumb:hover {
+    opacity:0.9;
+  }
+
+@media (max-width:600px){
+  .CodeMirror-scroll * {
+    white-space: pre-wrap;
+  }
+}

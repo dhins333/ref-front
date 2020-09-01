@@ -37,7 +37,7 @@ const FoldersList = (props) => {
             }
         }
         effectFunction();
-    },[])
+    },[dispatch,state.folderArray.length,state.skips])
 
     useEffect(() => {
         loaderRef.current.innerHTML = '';
