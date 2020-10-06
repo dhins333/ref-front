@@ -3,7 +3,7 @@ import React from 'react';
 const Card = (props) => {
     return(
         <div className='card' onClick = {props.onClick}>
-            <img className='card__img' src={`/img/${props.logo}`} alt='card'/>
+            <img className='card__img' src={props.logo} alt='card'/>
             <div className='card__name'><h3>{props.name}</h3></div>
         </div>
     )
