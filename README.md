@@ -1,6 +1,6 @@
 ## Reference Front
 
-A site to house reference materials/syntax for various programming langugages/technologies
+A site to house reference materials/syntax for various programming languages/technologies
 
 **Front end:React**
 
